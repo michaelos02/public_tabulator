@@ -14,6 +14,8 @@ Open the sheet and add your email to the "teacherEmail" column and deploy the ap
 
 The main settings for the app are in the "nsProps" file.  Open it and it is pretty self explanaotry.
 
+Note that you can embed WebApps in Google sites.  Here is a link about how to do that: https://developers.google.com/apps-script/guides/web#embedding_a_web_app_in_new_sites
+
 Have fun with this code!  Maybe it will save you some time searching for the right solution!
 
 Feel free to contact me if you have any questions.
