@@ -1,5 +1,4 @@
-# public_tabulator
-Display sheet data on a website
+# Google Apps Script Web App to Display Filtered Google Sheets Data
 
 I needed to find a way to allow users to see data they have submitted to a spreadsheet.  I wanted something more than just publishing the sheet to the web AND it needed to be filtered to show just the users submsions.
 
