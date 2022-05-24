@@ -1,0 +1,42 @@
+<script>
+  //trigger download of data.json file
+  document.getElementById("download-json").addEventListener("click", function(){
+  nsTab.theTable.download("json", "data.json");
+  });
+  //trigger download of data.json file
+  document.getElementById("get-data").addEventListener("click", function(){
+    let rslt = nsTab.theTable.getData();
+    console.log(rslt)
+  });
+  const nsTab = {}
+
+  nsTab.loadTable = function(info){
+    nsTab.theTable = new Tabulator("#infoTable", {
+      data:info,
+      height:"600px",
+      layout:"fitColumns",
+      columns:[
+        {title:"Student Name", field:"Student Name", headerFilter:true,download:false},
+        {title:"Student ID", field:"Student ID", sorter:"number", headerFilter:true},
+        {title:"Course Name", field:"Course Name", headerFilter:"list", headerFilterParams:{valuesLookup:"active",sort:"asc"}},
+        {title:"Goal", field:"Goal", formatter:"textarea", width:600, download:false},
+        {title:"Key", field:"key", visible:false, download:true},
+        {title:"On Track", field:"On Track", hozAlign:"center", editor:true, 
+          formatter:"tickCross", formatterParams:{allowTruthy:true}},
+        {title:"Notes", field:"notes",formatter:"textarea", editor:"textarea", download:true}
+      ],
+      downloadReady:function(fileContents, blob){
+        //fileContents - the unencoded contents of the file
+        //blob - the blob object for the download
+
+
+        //custom action to send blob to server could be included here
+
+
+        return blob; //must return a blob to proceed with the download, return false to abort download
+    },
+    });
+  }
+  
+
+</script>

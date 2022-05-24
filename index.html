@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <base target="_top">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    body,
+    input {
+      font-size: 16px;
+      color: red;
+      font-family: Verdana, sans-serif;
+    }
+  </style>
+  <?!= include('tab_JS'); ?>
+  <?!= include('tab_std_CSS'); ?>
+  <?!= include('tab_modified_CSS'); ?>
+
+  <script>
+    window.onload = function() {
+      google.script.run.withSuccessHandler(function(user) {
+          document.getElementById("currentUser").innerHTML = 'Current User: ' + user;
+      }).pick('currentUser');
+
+      google.script.run.withSuccessHandler(nsTab.loadTable).getData3()
+    }
+  </script>
+
+</head>
+
+<body>
+  <div class="w3-container">
+    <div>
+      <div class="w3-container">
+        <h4 class="w3-text-blue" id='currentUser'></h4>
+      </div>
+    </div>
+    <div>
+      <div>
+        <button id="download-json">Download JSON</button>
+        <button id="get-data">Get Data</button>
+      </div>
+      <div class="w3-row">
+        <div class="w3-col" style="width:10%">
+          </p>
+        </div>
+        <div class="w3-col" style="width:80%">
+          <div id='infoTable'>
+          </div>
+        </div>
+        <div class="w3-col" style="width:10%">
+          </p>
+        </div>
+      </div>
+      <div>
+        
+      </div>
+      </div>
+      <div></div>
+    </div>
+
+  </div>
+  <?!= include('nsTab_JS'); ?>
+</body>
+
+</html>
